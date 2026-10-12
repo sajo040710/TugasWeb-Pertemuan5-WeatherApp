@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Weather App</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <main class="app">
+    <header class="top">
+      <h1>Cuaca</h1>
+      <div class="unit-toggle" role="group" aria-label="Satuan suhu">
+        <button type="button" class="unit active" data-unit="C" aria-pressed="true">°C</button>
+        <button type="button" class="unit" data-unit="F" aria-pressed="false">°F</button>
+      </div>
+    </header>
+
+    <form id="search-form" class="search" autocomplete="off">
+      <label for="city-input" class="sr-only">Nama kota</label>
+      <input id="city-input" type="text" placeholder="Cari kota, mis. Medan" required>
+      <button type="submit">Cari</button>
+    </form>
+
+    <section id="history" class="history" aria-label="Riwayat pencarian" hidden></section>
+
+    <section id="status" class="status" aria-live="polite" hidden></section>
+
+    <article id="result" class="card" hidden>
+      <div class="card-head">
+        <h2 id="city-name"></h2>
+        <p id="description"></p>
+      </div>
+      <div class="card-body">
+        <img id="icon" alt="" width="100" height="100">
+        <p class="temp"><span id="temp"></span><span id="temp-unit"></span></p>
+      </div>
+      <dl class="meta">
+        <div><dt>Kelembaban</dt><dd id="humidity"></dd></div>
+        <div><dt>Terasa seperti</dt><dd id="feels"></dd></div>
+        <div><dt>Angin</dt><dd id="wind"></dd></div>
+      </dl>
+    </article>
+  </main>
+  <script src="script.js"></script>
+</body>
+</html>
